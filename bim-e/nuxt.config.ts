@@ -7,11 +7,11 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/scripts',
-    '@nuxt/test-utils'
-    /*     '@nuxt/ui' */,
-    '@ant-design-vue/nuxt'
+    '@nuxt/test-utils',
+    '@nuxt/ui' ,
+ /*    '@ant-design-vue/nuxt' */
   ], 
-  antd: {
+ /*  antd: {
 
-  }
+  } */
 })
