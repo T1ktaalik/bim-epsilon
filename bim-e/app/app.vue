@@ -1,5 +1,6 @@
 <template>
-  <NuxtPage />
+  <ClientOnly>  <NuxtPage /></ClientOnly>
+
 </template>
 <script setup>
 

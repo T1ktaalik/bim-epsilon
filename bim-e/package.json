@@ -25,6 +25,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@xeokit/xeokit-bim-viewer": "^2.7.1",
     "xeokit-bim-viewer": "^2.4.79"
   }
 }

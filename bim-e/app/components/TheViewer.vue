@@ -10,7 +10,10 @@
 </div>
 </template>
 <script setup>
-const { $BIMViewer, $Server, $LocaleService, $LocaleMessages} = useNuxtApp()
+/* import {  ExtendedBIMViewer  } from '~/lib/bim-viewer-extension' */
+/* import { BIMViewer, LocaleService, Server, messages } from 'xeokit-bim-viewer' */
+
+const { $ExtendedBIMViewer, $Server, $LocaleService, $LocaleMessages} = useNuxtApp()
 const server = ref()
 const bimViewer = ref()
 const viewerCanvas = ref()
@@ -21,12 +24,30 @@ const viewerElement = ref()
 const viewerToolbar = ref()
 
 
-
-
-
-
 onMounted(() => {
-    server.value = new $Server()
-    bimViewer.value = new $BIMViewer(server.value)
+    function loadViewer() {
+    server.value = new Server({
+        dataDir: '.'
+    })
+    console.log(server.value)
+/*     console.log(ExtendedBIMViewer) */
+     bimViewer.value = new BIMViewer(server.value, {
+        localeService: new LocaleService({
+            messages,
+            locale: 'en'
+        }),
+        canvasElement: viewerCanvas.value,
+        explorerElement: viewerExplorer.value,
+        inspectorElement: viewerInspector.value,
+        navCubeCanvasElement: viewerNavCube.value,
+        busyModelBackdropElement: viewerElement.value,
+        toolbarElement: viewerToolbar.value,
+        enableEditModels: false
+    })
+
+    console.log(bimViewer.value) 
+    bimViewer.value.loadProject('Duplex', console.log('wow!'))
+    }
+    loadViewer()
 })
 </script>

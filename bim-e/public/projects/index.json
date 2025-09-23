@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "id": "Duplex",
+      "name": "Duplex"
+    },
+    {
+      "id": "ManyModels",
+      "name": "Duplex and Conference Center"
+    },
+    {
+      "id": "MAP",
+      "name": "MAP"
+    },
+    {
+      "id": "HolterTower",
+      "name": "Holter Tower"
+    }
+  ]
+}
