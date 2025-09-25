@@ -31,8 +31,8 @@ onMounted(() => {
     })
 
     console.log(server.value.getGeometry)
-/*     console.log(ExtendedBIMViewer) */
-  /*    bimViewer.value = new $ExtendedBIMViewer(server.value, {
+
+    bimViewer.value = new $ExtendedBIMViewer(server.value, {
         localeService: new $LocaleService({
             messages: $LocaleMessages,
             locale: 'en'
@@ -45,9 +45,9 @@ onMounted(() => {
         toolbarElement: viewerToolbar.value,
         enableEditModels: false
     })
- */
+ 
     console.log(bimViewer.value) 
-   /*  bimViewer.value.loadProject('Duplex', console.log('wow!')) */
+  bimViewer.value.loadProject('Duplex', console.log('wow!')) 
     }
     loadViewer()
 })

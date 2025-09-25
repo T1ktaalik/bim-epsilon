@@ -3,8 +3,8 @@ import { BIMViewer } from '@xeokit/xeokit-bim-viewer'
 class ExtendedBIMViewer {
     bimViewer: BIMViewer;
    
-    constructor(config: any) {
-        this.bimViewer = new BIMViewer(config); // Pass config to BIMViewer
+    constructor(server: any, config: any) {
+        this.bimViewer = new BIMViewer(server, config); // Pass config to BIMViewer
     }
 
    
