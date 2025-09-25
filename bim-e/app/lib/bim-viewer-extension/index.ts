@@ -2,10 +2,12 @@ import { BIMViewer } from '@xeokit/xeokit-bim-viewer'
 
 class ExtendedBIMViewer {
     bimViewer: BIMViewer;
-    
+   
     constructor(config: any) {
         this.bimViewer = new BIMViewer(config); // Pass config to BIMViewer
     }
+
+   
 
     // Private methods (internal customization)
     _customizeViewer() {

@@ -1,7 +1,7 @@
 <template>
 <div>
     <div ref="viewerElement">
-        <canvas ref="viewerCanvas"></canvas>
+        <canvas ref="viewerCanvas" id="viewerCanvas"></canvas>
         <canvas ref="viewerNavCube"></canvas>
         <div ref="viewerExplorer"></div>
         <div ref="viewerInspector"></div>
@@ -25,18 +25,19 @@ const viewerToolbar = ref()
 
 
 onMounted(() => {
-    function loadViewer() {
-    server.value = new Server({
+    function loadViewer() {       
+    server.value = new $Server({
         dataDir: '.'
     })
-    console.log(server.value)
+
+    console.log(server.value.getGeometry)
 /*     console.log(ExtendedBIMViewer) */
-     bimViewer.value = new BIMViewer(server.value, {
-        localeService: new LocaleService({
-            messages,
+  /*    bimViewer.value = new $ExtendedBIMViewer(server.value, {
+        localeService: new $LocaleService({
+            messages: $LocaleMessages,
             locale: 'en'
         }),
-        canvasElement: viewerCanvas.value,
+        canvasElement:  viewerCanvas.value,
         explorerElement: viewerExplorer.value,
         inspectorElement: viewerInspector.value,
         navCubeCanvasElement: viewerNavCube.value,
@@ -44,9 +45,9 @@ onMounted(() => {
         toolbarElement: viewerToolbar.value,
         enableEditModels: false
     })
-
+ */
     console.log(bimViewer.value) 
-    bimViewer.value.loadProject('Duplex', console.log('wow!'))
+   /*  bimViewer.value.loadProject('Duplex', console.log('wow!')) */
     }
     loadViewer()
 })
